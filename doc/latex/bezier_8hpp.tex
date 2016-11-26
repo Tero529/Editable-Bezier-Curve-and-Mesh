@@ -1,0 +1,34 @@
+\hypertarget{bezier_8hpp}{}\section{src/bezier.hpp File Reference}
+\label{bezier_8hpp}\index{src/bezier.\+hpp@{src/bezier.\+hpp}}
+
+
+Specifies De Castlejau\textquotesingle{}s Bezier Drawing Algorthm.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::pair$<$ float, float $>$ \hyperlink{bezier_8hpp_acfab15c1bd83b54907618ec988845457}{bezier} (std\+::vector$<$ std\+::pair$<$ float, float $>$ $>$ points, float t)
+\begin{DoxyCompactList}\small\item\em De Castlejau\textquotesingle{}s Algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Specifies De Castlejau\textquotesingle{}s Bezier Drawing Algorthm. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{bezier_8hpp_acfab15c1bd83b54907618ec988845457}{}\label{bezier_8hpp_acfab15c1bd83b54907618ec988845457} 
+\index{bezier.\+hpp@{bezier.\+hpp}!bezier@{bezier}}
+\index{bezier@{bezier}!bezier.\+hpp@{bezier.\+hpp}}
+\subsubsection{\texorpdfstring{bezier()}{bezier()}}
+{\footnotesize\ttfamily std\+::pair$<$float,float$>$ bezier (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::pair$<$ float, float $>$ $>$}]{points,  }\item[{float}]{t }\end{DoxyParamCaption})}
+
+
+
+De Castlejau\textquotesingle{}s Algorithm. 
+
+Taken an input as a list of control points and a \char`\"{}t\char`\"{} value recursively generates a single ouput point on the bezier curve specified by the control points 

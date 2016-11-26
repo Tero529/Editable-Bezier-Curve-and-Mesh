@@ -1,0 +1,79 @@
+\hypertarget{main_8cpp}{}\section{src/main.cpp File Reference}
+\label{main_8cpp}\index{src/main.\+cpp@{src/main.\+cpp}}
+
+
+Main Function for Curve and Surface Rendering.  
+
+
+{\ttfamily \#include $<$G\+L\+U\+T/glut.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}bezier.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}task2.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}task34.\+hpp\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8cpp_a1e3b6d38df0786ccf7f938d60e386aae}{Init} ()
+\begin{DoxyCompactList}\small\item\em Initialise Draw Settings. \end{DoxyCompactList}\item 
+void \hyperlink{main_8cpp_a6765cdcebe5c8445969d5f76345df457}{render} (void)
+\begin{DoxyCompactList}\small\item\em Function to render objects to screen, main display function. \end{DoxyCompactList}\item 
+void \hyperlink{main_8cpp_ad7959487cf4d328793da82bcd6949e11}{draw\+Point} (std\+::pair$<$ int, int $>$ point)
+\begin{DoxyCompactList}\small\item\em Displays Control Point. \end{DoxyCompactList}\item 
+int \hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Startpoint of Application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Main Function for Curve and Surface Rendering. 
+
+Open a bank blakc screen which provides space for an editable bezier curve. Left click to add a point, press d to enter into dragging mode, right click to remove a control point. upon clicking escape, drawing window is closed, surface of revolution of curve is obtained and saved as an O\+FF file. 
+
+\subsection{Function Documentation}
+\hypertarget{main_8cpp_ad7959487cf4d328793da82bcd6949e11}{}\label{main_8cpp_ad7959487cf4d328793da82bcd6949e11} 
+\index{main.\+cpp@{main.\+cpp}!draw\+Point@{draw\+Point}}
+\index{draw\+Point@{draw\+Point}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{draw\+Point()}{drawPoint()}}
+{\footnotesize\ttfamily void draw\+Point (\begin{DoxyParamCaption}\item[{std\+::pair$<$ int, int $>$}]{point }\end{DoxyParamCaption})}
+
+
+
+Displays Control Point. 
+
+Draws the control point to screen in a + fashion as a series of point above and below the specified control point. \hypertarget{main_8cpp_a1e3b6d38df0786ccf7f938d60e386aae}{}\label{main_8cpp_a1e3b6d38df0786ccf7f938d60e386aae} 
+\index{main.\+cpp@{main.\+cpp}!Init@{Init}}
+\index{Init@{Init}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialise Draw Settings. 
+
+Both Background and Drawing colour are set to Black The drawing mode is set to projection in orthographic mode with size equal to that of the window\hypertarget{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{}\label{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627} 
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Startpoint of Application. 
+
+Uses G\+L\+UT to initiliaze window with the created W\+I\+D\+TH and H\+E\+I\+G\+HT and places window at top left of screen
+
+Initialise Drawing settings wiith \hyperlink{main_8cpp_a1e3b6d38df0786ccf7f938d60e386aae}{Init()} \hypertarget{main_8cpp_a6765cdcebe5c8445969d5f76345df457}{}\label{main_8cpp_a6765cdcebe5c8445969d5f76345df457} 
+\index{main.\+cpp@{main.\+cpp}!render@{render}}
+\index{render@{render}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void render (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function to render objects to screen, main display function. 
+
+Draws line along covex hull of curve using a stippled line drawing primitive and the points in the Point Vector
+
+~\newline
+ Then draws the curve in white using the De Castlejau recursive alogrithm 

@@ -1,0 +1,82 @@
+\hypertarget{task34_8hpp}{}\section{src/task34.hpp File Reference}
+\label{task34_8hpp}\index{src/task34.\+hpp@{src/task34.\+hpp}}
+
+
+Produces surface of revolution and O\+FF file of final curve.  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$glm/glm.\+hpp$>$}\newline
+{\ttfamily \#include $<$glm/gtc/matrix\+\_\+transform.\+hpp$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_triangle_mesh}{Triangle\+Mesh}
+\begin{DoxyCompactList}\small\item\em Mesh Data Structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{task34_8hpp_a7c90d7fd770ca55b712d385d355df042}{}\label{task34_8hpp_a7c90d7fd770ca55b712d385d355df042} 
+\#define {\bfseries P\+O\+I\+N\+T\+S\+\_\+\+P\+E\+R\+\_\+\+C\+U\+R\+VE}~10
+\item 
+\hypertarget{task34_8hpp_af82ffb5890ae5cdd1fd94b1aec647c93}{}\label{task34_8hpp_af82ffb5890ae5cdd1fd94b1aec647c93} 
+\#define {\bfseries D\+E\+G\+R\+E\+E\+S\+\_\+\+P\+E\+R\+\_\+\+R\+O\+T\+A\+T\+I\+ON}~10
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{task34_8hpp_ae396e4a03d52453c18a885696ec8abd5}{sample} (std\+::vector$<$ std\+::pair$<$ float, float $>$ $>$ \hyperlink{task2_8hpp_af7972f6460066f9368db41c6f5e36328}{Points})
+\begin{DoxyCompactList}\small\item\em Samples Control points ot create surface. \end{DoxyCompactList}\item 
+void \hyperlink{task34_8hpp_a3abcbe1fcd37d8982941a795ed22e34a}{Store} ()
+\begin{DoxyCompactList}\small\item\em Uses sampled points and stores it as a Mesh Data Structure. \end{DoxyCompactList}\item 
+void \hyperlink{task34_8hpp_a9dcac18006ce057b8d78c847174c1362}{Print} ()
+\begin{DoxyCompactList}\small\item\em Uses mesh data structure to write in O\+FF format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{task34_8hpp_a344889e6b35181a8b05ff67c8fd3d069}{}\label{task34_8hpp_a344889e6b35181a8b05ff67c8fd3d069} 
+struct \hyperlink{struct_triangle_mesh}{Triangle\+Mesh} \hyperlink{task34_8hpp_a344889e6b35181a8b05ff67c8fd3d069}{Surface}
+\begin{DoxyCompactList}\small\item\em Our Mesh Object;. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Produces surface of revolution and O\+FF file of final curve. 
+
+Takes as input the control points of the final curve, as the user quits the editable application, uses them to create a surface of revolution for a curve sampled at t=0.\+1 and a 10 degree rotation sample This surface is stored in a vertex-\/face mesh data structure and ouputted in an O\+FF format The ouput should be redirected to desired file in the command prompt 
+
+\subsection{Function Documentation}
+\hypertarget{task34_8hpp_a9dcac18006ce057b8d78c847174c1362}{}\label{task34_8hpp_a9dcac18006ce057b8d78c847174c1362} 
+\index{task34.\+hpp@{task34.\+hpp}!Print@{Print}}
+\index{Print@{Print}!task34.\+hpp@{task34.\+hpp}}
+\subsubsection{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void Print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Uses mesh data structure to write in O\+FF format. 
+
+Simply reads through the Surface structure and ouputs the list of vertices and their coorindates Then outputs the traingular faces \hypertarget{task34_8hpp_ae396e4a03d52453c18a885696ec8abd5}{}\label{task34_8hpp_ae396e4a03d52453c18a885696ec8abd5} 
+\index{task34.\+hpp@{task34.\+hpp}!sample@{sample}}
+\index{sample@{sample}!task34.\+hpp@{task34.\+hpp}}
+\subsubsection{\texorpdfstring{sample()}{sample()}}
+{\footnotesize\ttfamily void sample (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::pair$<$ float, float $>$ $>$}]{Points }\end{DoxyParamCaption})}
+
+
+
+Samples Control points ot create surface. 
+
+Control Points are sampled at a t values of 0.\+1 to create a curve The curve is rotated about the x acis a a sample degree value of 10 to create the surface of revolution \hypertarget{task34_8hpp_a3abcbe1fcd37d8982941a795ed22e34a}{}\label{task34_8hpp_a3abcbe1fcd37d8982941a795ed22e34a} 
+\index{task34.\+hpp@{task34.\+hpp}!Store@{Store}}
+\index{Store@{Store}!task34.\+hpp@{task34.\+hpp}}
+\subsubsection{\texorpdfstring{Store()}{Store()}}
+{\footnotesize\ttfamily void Store (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Uses sampled points and stores it as a Mesh Data Structure. 
+
+Uses the vertices of the surface to generate faces as triangles, with 20 faces between any two consecutive rotated curves 

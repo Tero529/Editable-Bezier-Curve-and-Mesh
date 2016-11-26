@@ -66,7 +66,7 @@ void render(void){
     glColor3f(1.0,0.0,0.0);// Set color of convex hull to Red
     glLineStipple(1, 0x00FF);//Draw a dotted line (
     glEnable(GL_LINE_STIPPLE);
-    glBegin(GL_LINE_LOOP);
+    glBegin(GL_LINE_STRIP);
     
     //Extract and draw points from the points vector
     for(std::pair<float,float> po :Points){

@@ -1,0 +1,110 @@
+\hypertarget{task2_8hpp}{}\section{src/task2.hpp File Reference}
+\label{task2_8hpp}\index{src/task2.\+hpp@{src/task2.\+hpp}}
+
+
+Adding fucurve editabillity functionality using the mouse and keyboard.  
+
+
+{\ttfamily \#include \char`\"{}task34.\+hpp\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{task2_8hpp_a9fd955bd42c22cd4dd38db0c5f4125f1}{key\+Functions} (unsigned char key, int x, int y)
+\begin{DoxyCompactList}\small\item\em Key Callback Functions. \end{DoxyCompactList}\item 
+void \hyperlink{task2_8hpp_a3b269d726bc67a7976f163e88de5b524}{mouse\+Functions} (int button, int state, int x, int y)
+\begin{DoxyCompactList}\small\item\em Registers Clicks and responds to them by adding/deleting/dragging control points. \end{DoxyCompactList}\item 
+void \hyperlink{task2_8hpp_a1ecf1840e976ff09e3c48c041b5bd4f4}{motion\+Functions} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Takes care of draggin functionality. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{task2_8hpp_af04abe2196a69d334c920e90c51cadd8}{}\label{task2_8hpp_af04abe2196a69d334c920e90c51cadd8} 
+int \hyperlink{task2_8hpp_af04abe2196a69d334c920e90c51cadd8}{oldX}
+\begin{DoxyCompactList}\small\item\em Original x value of point being dragged. \end{DoxyCompactList}\item 
+\hypertarget{task2_8hpp_a7bbd19fb1401d9fa79583bb27e57acc7}{}\label{task2_8hpp_a7bbd19fb1401d9fa79583bb27e57acc7} 
+int \hyperlink{task2_8hpp_a7bbd19fb1401d9fa79583bb27e57acc7}{oldY}
+\begin{DoxyCompactList}\small\item\em Original y value of point being dragged. \end{DoxyCompactList}\item 
+\hypertarget{task2_8hpp_a6bbc6b7e52b17450c52d8e748d6abae1}{}\label{task2_8hpp_a6bbc6b7e52b17450c52d8e748d6abae1} 
+int {\bfseries px}
+\item 
+\hypertarget{task2_8hpp_aa9511a47fd6271333948489a220e3029}{}\label{task2_8hpp_aa9511a47fd6271333948489a220e3029} 
+int {\bfseries py}
+\item 
+\hypertarget{task2_8hpp_a28e3c179a86f337095088b3ca02a2b2a}{}\label{task2_8hpp_a28e3c179a86f337095088b3ca02a2b2a} 
+bool \hyperlink{task2_8hpp_a28e3c179a86f337095088b3ca02a2b2a}{valid} =false
+\begin{DoxyCompactList}\small\item\em Key which specified with a key eventis caused by is pressing(true) or releasing (false) \end{DoxyCompactList}\item 
+\hypertarget{task2_8hpp_a77e49fc0956d412a05337460c7778c6d}{}\label{task2_8hpp_a77e49fc0956d412a05337460c7778c6d} 
+bool \hyperlink{task2_8hpp_a77e49fc0956d412a05337460c7778c6d}{first} =true
+\begin{DoxyCompactList}\small\item\em Specified whether dragging has just begun (false is dragging is in progress. \end{DoxyCompactList}\item 
+\hypertarget{task2_8hpp_af7972f6460066f9368db41c6f5e36328}{}\label{task2_8hpp_af7972f6460066f9368db41c6f5e36328} 
+std\+::vector$<$ std\+::pair$<$ float, float $>$ $>$ \hyperlink{task2_8hpp_af7972f6460066f9368db41c6f5e36328}{Points}
+\begin{DoxyCompactList}\small\item\em Control Point List. \end{DoxyCompactList}\item 
+\hypertarget{task2_8hpp_aa7ec949f33b0577905b738df27eff963}{}\label{task2_8hpp_aa7ec949f33b0577905b738df27eff963} 
+std\+::vector$<$ std\+::pair$<$ float, float $>$ $>$\+::iterator \hyperlink{task2_8hpp_aa7ec949f33b0577905b738df27eff963}{save}
+\begin{DoxyCompactList}\small\item\em To save the pointer to the point being currently dragged. \end{DoxyCompactList}\item 
+\hypertarget{task2_8hpp_a3a217745c5eebfcdb3e21cbc9bcdc07a}{}\label{task2_8hpp_a3a217745c5eebfcdb3e21cbc9bcdc07a} 
+bool \hyperlink{task2_8hpp_a3a217745c5eebfcdb3e21cbc9bcdc07a}{keys} \mbox{[}1024\mbox{]}
+\begin{DoxyCompactList}\small\item\em Keep track of currently toggled keys. \end{DoxyCompactList}\item 
+\hypertarget{task2_8hpp_a4b33e369d0299118207bc2db76af318a}{}\label{task2_8hpp_a4b33e369d0299118207bc2db76af318a} 
+float \hyperlink{task2_8hpp_a4b33e369d0299118207bc2db76af318a}{W\+I\+D\+TH}
+\begin{DoxyCompactList}\small\item\em Window W\+I\+D\+TH,. \end{DoxyCompactList}\item 
+\hypertarget{task2_8hpp_a643d5190e32054c2b7e4c12ce0fbe2af}{}\label{task2_8hpp_a643d5190e32054c2b7e4c12ce0fbe2af} 
+float \hyperlink{task2_8hpp_a643d5190e32054c2b7e4c12ce0fbe2af}{H\+E\+I\+G\+HT}
+\begin{DoxyCompactList}\small\item\em Window H\+E\+I\+G\+HT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Adding fucurve editabillity functionality using the mouse and keyboard. 
+
+Allows the user to interact with the bezier curve being drawn in one of three ways. ~\newline
+Add a control point by using left key Delete a contorl point using a right click in a 5 pixel vicinity of the point Enable dragging mode by clicking the d key and then dragging using a held down left click. 
+
+\subsection{Function Documentation}
+\hypertarget{task2_8hpp_a9fd955bd42c22cd4dd38db0c5f4125f1}{}\label{task2_8hpp_a9fd955bd42c22cd4dd38db0c5f4125f1} 
+\index{task2.\+hpp@{task2.\+hpp}!key\+Functions@{key\+Functions}}
+\index{key\+Functions@{key\+Functions}!task2.\+hpp@{task2.\+hpp}}
+\subsubsection{\texorpdfstring{key\+Functions()}{keyFunctions()}}
+{\footnotesize\ttfamily void key\+Functions (\begin{DoxyParamCaption}\item[{unsigned char}]{key,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Key Callback Functions. 
+
+Function sets a key callback for the escape key, so that the application quits whenever the user pressed the escape key after outputting surface of revolution of the curve to an O\+FF file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key pressed on the keyboard \\
+\hline
+{\em x} & X-\/coordinate of mouse when key is pressed \\
+\hline
+{\em y} & Y-\/coordinate of mouse when key is pressed \\
+\hline
+\end{DoxyParams}
+polls for event when pressed key==27 \hypertarget{task2_8hpp_a1ecf1840e976ff09e3c48c041b5bd4f4}{}\label{task2_8hpp_a1ecf1840e976ff09e3c48c041b5bd4f4} 
+\index{task2.\+hpp@{task2.\+hpp}!motion\+Functions@{motion\+Functions}}
+\index{motion\+Functions@{motion\+Functions}!task2.\+hpp@{task2.\+hpp}}
+\subsubsection{\texorpdfstring{motion\+Functions()}{motionFunctions()}}
+{\footnotesize\ttfamily void motion\+Functions (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Takes care of draggin functionality. 
+
+First checks whether dragging has just begun or is in progres. If it in progress then updates the point specified by the save std\+::pair. Otherise checks to see if the mouse is pressed, the dragging mode is enable( by the d key) and cursor is in the 5 pixel vicinity of any point. Finds and saves this point in the point \char`\"{}pair\char`\"{} \hypertarget{task2_8hpp_a3b269d726bc67a7976f163e88de5b524}{}\label{task2_8hpp_a3b269d726bc67a7976f163e88de5b524} 
+\index{task2.\+hpp@{task2.\+hpp}!mouse\+Functions@{mouse\+Functions}}
+\index{mouse\+Functions@{mouse\+Functions}!task2.\+hpp@{task2.\+hpp}}
+\subsubsection{\texorpdfstring{mouse\+Functions()}{mouseFunctions()}}
+{\footnotesize\ttfamily void mouse\+Functions (\begin{DoxyParamCaption}\item[{int}]{button,  }\item[{int}]{state,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Registers Clicks and responds to them by adding/deleting/dragging control points. 
+
+Any operation is valid only is event is caused by a mouse press and not a mouse release
+
+A mouse release signifies that dragging operation has ended if in dragging mode
+
+Adds a new control point at the end of point list if the dragging mode is not enabled using the d key on a L\+E\+FT click.
+
+It looks for and removes a point in a 5 pixel vicinity on a right click on the canvas. 
